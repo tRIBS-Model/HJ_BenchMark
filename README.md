@@ -1,2 +1,2 @@
 # HappyJackExample
-Happy Jack Watershed FIles
+Happy Jack Point Scale tRIBS Model Files
