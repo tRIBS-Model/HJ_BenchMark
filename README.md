@@ -1,4 +1,4 @@
-# tRIBS single point benchmark
+# TIN-Based Real-Time Integrated Basin Simulator single point benchmark
 
 This repository hosts the setup for executing a single point model of the [Happy Jack Snotel Site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=969) in Northern Arizona, USA, using the TIN-Based Real-Time Integrated Basin Simulator ([tRIBS](https://tribshms.readthedocs.io/en/latest/)).
 
