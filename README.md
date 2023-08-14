@@ -4,13 +4,13 @@ This repository hosts the setup for executing a single point model of the [Happy
 
 ## The structure of this repository is as follows:
 ### data
- Contains all the necessary data to run tRIBS at Happy Jack and includes Snotel and SWANN data as a calibration/validation set.
+Contains all the necessary data to run tRIBS at Happy Jack and includes Snotel and SWANN data as a calibration/validation set.
 ### doc 
-Contains relevant documentation to running this specific benchmark case and other information regarding working with this repository, including requirements.
+Contains relevant documentation for running this specific benchmark case and other information regarding working with this repository, including requirements and instructions for building tRIBS.
 ### src
-Contains two shell scripts: one (*runall.sh*) to execute the model and generate a log of the relevant model runs and the other(*summarize.sh*)a script that summarizes the results from the model run. This directory also contains two sub-directories: [inFile](/src/inFile) whic holds the .in files used to execute tRIBS and another, [scripts](/src/scripts) that contains subroutines for (*runall.sh*) and (*summarize.sh*).
+Is designed to contain source code for for the tRIBS executable, which can be obtained [here](https://github.com/tribshms/tribs_sub2020).
 ### bin
-Directory for the tRIBS executable, which can be obtained and built from [here](https://github.com/tribshms/tribs_sub2020).
+Directory for building and storing tRIBS executable, with instructions [here](doc/CMake.md).
 ### results
 Directory for results from the Happy Jack point tRIBS simulation. 
 

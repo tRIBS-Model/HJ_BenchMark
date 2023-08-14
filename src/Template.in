@@ -34,19 +34,19 @@ OPTSNOW:	Option for single layer snow model
 1
 
 OUTFILENAME:	   Base name of the tMesh and variable output or HJ_results_off_
-Output/Results/Voi/HJ_results_on_
+results/HJ_results
 
 OUTHYDROFILENAME:  Base name for hydrograph output
-Output/Results/Hyd/HJ_results_on_
+results/HJ_results
 
 GAUGESTATIONS: 	   Rain Gauge station file (*.sdf) HJR_GF_2002-2018.sdf HJR_2002_AugEvent.sdf
-Rain/HJR_GF_2002-2018.sdf
+data/HJR_GF_2002-2018.sdf
 
 GAUGECONVERT:      Rain Gauge data conversion file (*.mdi)
 
 
 GAUGEBASENAME:	   Rain Gauge data BASE name (*.mdf) HJR_GF_2002-2018.mdf HJR_2002_AugEvent.mdf
-Rain/HJR_GF_2002-2018.mdf
+data/HJR_GF_2002-2018.mdf
 
 
 
@@ -257,7 +257,7 @@ ARCINFOFILENAME:  tMesh input file base name Arc files
 
 
 POINTFILENAME:    tMesh input file name Points files
-Input/HappyJack.points
+data/HappyJack.points
 
 
 ## Resampling Grids
@@ -265,25 +265,25 @@ Input/HappyJack.points
 
 
 SOILTABLENAME:    Soil parameter reference table (*.sdt)
-Input/HJ_Soil_Table.sdt
+data/HJ_Soil_Table.sdt
 
 SOILMAPNAME:      Soil texture ASCII grid (*.soi)
-Input/HJ_Soil_Map.soi
+data/HJ_Soil_Map.soi
 
 LANDTABLENAME:    Land use parameter reference table (*.ldt)
-Input/HJ_Veg_Table.ldt
+data/HJ_Veg_Table.ldt
 
 LANDMAPNAME:  	  Land use ASCII grid (*.lan)
-Input/HJ_Veg_Map.lan
+data/HJ_Veg_Map.lan
 
 GWATERFILE:       Ground water ASCII grid (*.iwt) 
-Input/HJ_Water_Table_Map.iwt
+data/HJ_Water_Table_Map.iwt
 
 DEMFILE:	  DEM ASCII grid for sky and land view factors (*.dem)
-Input/Sheltering_DEM.dem
+data/Sheltering_DEM.dem
 
 RAINFILE:         Base name of the radar ASCII grid
-Rain/
+data/
 
 RAINEXTENSION:    Extension for the radar ASCII grid 
 txt
@@ -292,10 +292,10 @@ DEPTHTOBEDROCK:   Uniform depth to bedrock (meters)
 15
 
 BEDROCKFILE:      Bedrock depth ASCII grid (*.brd)
-Input/
+data/
 
 LUGRID:		  Land cover grid data file (*.gdf)
-Input/Dynamic_Veg_Grid_Data.gdf
+data/Dynamic_Veg_Grid_Data.gdf
 
 
 ## Meteorological Variables
@@ -323,7 +323,7 @@ PRECLAPSE:	  Precipitation lapse rate
 
 
 HYDROMETSTATIONS:  Hydrometeorological station file (*.sdf)
-Weather/HJW_GF_2002-2018.sdf
+data/HJW_GF_2002-2018.sdf
 
 HYDROMETGRID:  	   Hydrometeorological grid data file (*.gdf)
 
@@ -332,7 +332,7 @@ HYDROMETCONVERT:   Hydrometeorological data conversion file (*.mdi)
 
 
 HYDROMETBASENAME:  Hydrometeorological data BASE name (*.mdf)
-Weather/HJW_GF_2002-2018.mdf
+data/HJW_GF_2002-2018.mdf
 
 
 
@@ -347,13 +347,13 @@ RIBSHYDOUTPUT:	   Compatibility with RIBS User Interphase
 0
 
 NODEOUTPUTLIST:    Filename with Nodes for Dynamic Output (*.nol)
-Input/Nodes/pNodes.dat
+data/Nodes/pNodes.dat
 
 HYDRONODELIST:     Filename with Nodes for HydroModel Output (*.nol)
-Input/Nodes/hNodes.dat
+data/Nodes/hNodes.dat
 
 OUTLETNODELIST:    Filename with Interior Nodes for  Output (*.nol)
-Input/Nodes/oNodes.dat
+data/Nodes/oNodes.dat
 
 ##=========================================================================
 ##
@@ -394,7 +394,7 @@ FORECASTLENGTH:	   Forecast Window Length (hours)
 0
 
 FORECASTFILE:	   Base name of the radar QPF grids
-Rain/
+data/
 
 CLIMATOLOGY:	   Rainfall climatology (mm/hr)
 0
@@ -457,7 +457,7 @@ RESTARTINTRVL:      Time set for restart output (hours)
 12
 
 RESTARTDIR:         Path of directory for restart output
-Restart/
+data/
 
 RESTARTFILE:        Actual file to restart a run
 tRIBS_Rstrt_00012
