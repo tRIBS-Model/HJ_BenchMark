@@ -1,1 +1,1 @@
-Build and store tRIBS executable here
+Store tRIBS source code and pre-and-post processing scripts here.

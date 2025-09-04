@@ -1,1 +1,1 @@
-Store tRIBS sourc code and pre and post processing scripts here
+Store tRIBS source code and pre-and-post processing scripts here.
