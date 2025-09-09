@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="doc/documentation/github.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">README</h1>
+</header>
+<h1
+id="tin-based-real-time-integrated-basin-simulator-basin-scale-benchmark">TIN-Based
+Real-Time Integrated Basin Simulator basin-scale benchmark</h1>
+<p>This repository hosts the setup for executing a basin-scale <a
+href="https://tribshms.readthedocs.io/en/latest/">tRIBS</a> simulation
+of the Big Spring watershed, a forested tributary to Sycamore Creek in
+Northern Arizona, USA.</p>
+<h2 id="obtaining-tribs">Obtaining tRIBS</h2>
+<p>tRIBS v5.2 (or later) uses CMake as build system, instructions on
+downloading and building tRIBS can be found <a
+href="https://tribshms.readthedocs.io/en/latest/man/Model_Execution.html#compilation-instructions">here</a>.
+Or alternatively one may use the tRIBS docker image, more information on
+this can be found <a
+href="https://tribshms.readthedocs.io/en/latest/man/Docker.html">here</a>.</p>
+<h2 id="model-execution">Model Execution</h2>
+<p>From the command line tRIBS can be executed as follows, assuming the
+executable is stored in the sub-directory <code>bin</code>:</p>
+<pre><code>bin/tRIBS &lt;path/to/infile&gt;</code></pre>
+<p>Alternatively, if you want to run tRIBS in parallel, you will need to
+install <a href="https://www.open-mpi.org/">OpenMPI</a> or a similar
+Message Passing Interface, and build the parallel version of tRIBS as
+described <a
+href="https://tribshms.readthedocs.io/en/latest/man/Model_Execution.html#compilation-instructions">here</a>.
+In order to run the parallel version of tRIBS, you need to call
+<code>mpirun</code> or similar and specify the number of cores required
+with the flag -n. The following is an example of this assuming
+<code>partRIBS</code> is the parallel build of tRIBS.</p>
+<pre><code>mpirun -n 3 bin/partRIBS &lt;path/to/parallel_infile&gt;</code></pre>
+<p>The Big Spring serial input file can be found in
+<code>src/in_files/big_spring.in</code> and parallel file can be found
+in <code>src/in_files/big_spring_par.in</code>. Note: the current input
+file is setup with relative paths, any modification in the directories
+structure may also require an update of the .in file.</p>
+<h2 id="benchmark">Benchmark</h2>
+<p>The benchmark case results are stored as a zip file under
+<code>results/reference</code> and include sub-directories for both
+parallel and serial model runs. These results can be visualized using
+the jupyter notebook located in
+<code>doc/notebooks/Results.ipynb</code>. In order to run the jupyter
+notebook we recommend creating a <a
+href="https://docs.python.org/3/library/venv.html">virtual
+environment</a> using python where you can install additional but
+required packages as specified in
+<code>doc/notebooks/requirements.text</code>. Note you may also have to
+install jupyter in your virtual environment using
+<code>pip install jupyterlab</code>.</p>
+<h2 id="directory-structure">Directory Structure:</h2>
+<h3 id="data">data</h3>
+<p>Contains all the necessary data to run tRIBS at Big Spring and
+includes graph files for parallel operations. Though additional graph
+files can be generated using <a
+href="https://github.com/tribshms/MeshBuilder">MeshBuilder</a>.</p>
+<h3 id="doc">doc</h3>
+<p>Contains Jupyter notebooks for running and analyzing this specific
+benchmark case, along side additional documentation.</p>
+<h3 id="src">src</h3>
+<p>Is designed to contain source code for for the tRIBS executable,
+which can be obtained <a
+href="https://github.com/tribshms/tRIBS">here</a>.</p>
+<h3 id="bin">bin</h3>
+<p>Directory for building and storing tRIBS executable, with
+instructions <a
+href="https://tribshms.readthedocs.io/en/latest/man/Model_Execution.html#compilation-instructions">here</a>.</p>
+<h3 id="results">results</h3>
+<p>Directory for results from Big Spring tRIBS simulation. The
+sub-directory references contains additional sub-directories for both
+parallel and serial model runs.</p>
+</body>
+</html>
