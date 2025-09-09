@@ -1,31 +1,43 @@
-# TIN-Based Real-Time Integrated Basin Simulator point-scale benchmark
-This repository hosts the setup for executing a point-scale model of the [Happy Jack SNOTEL Site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=969) in Northern Arizona, USA, using the TIN-Based Real-Time Integrated Basin Simulator ([tRIBS](https://tribshms.readthedocs.io/en/latest/)). tRIBS v5.3 (or later) uses CMake as a build system, instructions on downloading and building tRIBS can be found [here](https://tribshms.readthedocs.io/en/latest/man/Model_Execution.html#compilation-instructions). Or alternatively one may use the tRIBS docker image, more information on this can be found [here](https://tribshms.readthedocs.io/en/latest/man/Docker.html#docker).
+# Benchmark Case: Point-Scale Happy Jack
 
-## Model Execution
-From the command line tRIBS can be executed as follows, assuming the executable is stored in the sub-directory `bin`:
+This directory contains all the necessary files to run a point-scale simulation of the [Happy Jack SNOTEL Site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=969) in Northern Arizona, USA.
 
+This benchmark is designed to test the vertical soil moisture and energy balance components of the tRIBS model[^1]<sup>,</sup>[^2].
+
+## 1. Prerequisites
+
+Before running this simulation, please ensure you have a compiled tRIBS executable (v5.3.0 or later). For instructions on compiling the model from source or using the Docker image, please refer to the main [tRIBS Documentation](https://tribshms.readthedocs.io/en/latest/).
+
+## 2. How to Run the Simulation
+
+The tRIBS model is executed from the command line. From within this directory (`point-scale-happy-jack/`), you can run the simulation using the following command structure:
+
+```bash
+/path/to/your/tRIBS/executable src/in_files/happy_jack.in
 ```
-bin/tRIBS <path/to/infile>
-```
+**Note:** The provided input file (`happy_jack.in`) is configured with relative paths. By default, it will write all model outputs into the `results/test/` directory.
 
-In this case the happy jack input files can be found in ```src/in_files/happy_jack.in``` and can be further modified to explore tRIBS functionality. Note: the current input file is setup with relative paths and results will be saved to ```results/test```. Also, any modification in ```data/model``` may require an update of the .in file.
+## 3. How to Verify Your Results
 
-## Benchmark 
-The benchmark case results are stored as a zip file under ```results/reference```. These results can be visualized in comparison to SNOTEL[^1]<sup>,</sup>[^2] data for the Happy Jack site as demonstrated in the jupyter notebook in ```src/tRIBS_snotel_comparison.ipynb```.
+After the simulation has successfully completed, you must return to the **root directory of the repository** to use the automated verification script.
 
-## Directory Structure:
-### data
-Contains all the necessary data to run tRIBS at Happy Jack and includes Snotel and SWANN data as a calibration/validation set.
-### doc 
-Contains notebooks for running and analyzing this specific benchmark case, along side additional documentation.
-### src
-Is designed to contain source code for for the tRIBS executable, which can be obtained [here](https://github.com/tribshms/tRIBS).
-### bin
-Directory for building and storing tRIBS executable, with instructions [here](https://tribshms.readthedocs.io/en/latest/man/Model_Execution.html#compilation-instructions).
-### results
-Directory for results, with a _reference_ and _test_ sub-directories. The former contains reference outputs from the Happy Jack point tRIBS simulation, while the later is empty and intended to store additional model simulations. Note the main results also contains a zip of the _reference_ sub-directory.
+1.  Navigate back to the repository root:
+    ```bash
+    cd ../
+    ```
 
+2.  Run the verification script, specifying the `point-scale-happy-jack` benchmark:
+    ```bash
+    python verification/verify.py point-scale-happy-jack
+    ```
 
+If your installation is correct, you will see a `[PASS]` message for all checks, confirming that your results match the official reference values.
+
+## Input File Structure
+
+*   **`data/`**: Contains all GIS and meteorological forcing data required to run this benchmark case.
+*   **`src/in_files/`**: Contains the main tRIBS input file (`happy_jack.in`). This is the file you can modify to explore different model parameters and options.
+*   **`results/test/`**: The designated output directory for your simulation runs. It is pre-configured in the `.gitignore` file to prevent model outputs from being tracked by Git.
 
 ## References
 
@@ -33,4 +45,3 @@ Directory for results, with a _reference_ and _test_ sub-directories. The former
 
 [^2]: Yan H, N Sun, M Wigmosta, R Skaggs, Z Hou, and R Leung. 2018. “Next-generation intensity-duration-frequency curves for hydrologic design in snow-dominated environments.” Water Resources Research, 54(2), 1093–1108.
 BCQC Data Format
-
