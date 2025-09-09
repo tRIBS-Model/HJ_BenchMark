@@ -1,5 +1,7 @@
 # tRIBS Official Benchmark Cases
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1234567.svg)](https://doi.org/10.5281/zenodo.17088973)
+
 This repository provides a set of official benchmark cases for the tRIBS (TIN-based Real-time Integrated Basin Simulator) distributed hydrological model. Its primary purpose is to allow users to:
 
 1.  **Validate a new tRIBS installation** by ensuring it can replicate official results.
