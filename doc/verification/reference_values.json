@@ -1,0 +1,58 @@
+{
+    "tRIBS_version": "5.3.0",
+    "file_format_version": "1.1",
+    "generated_on_utc": "2025-09-09T20:25:21.510543+00:00",
+    "benchmarks": {
+        "point-scale-happy-jack": {
+            "description": "Point-scale simulation at the Happy Jack site.",
+            "values": {
+                "dSat": -11.081444400000237,
+                "dUnsat": 45.12258890537532,
+                "dCanopySWE": 0.0,
+                "dSWE": 0.0,
+                "dCanopy": 0.0,
+                "nP": 11603.01,
+                "nET": 2446.134171,
+                "nQsurf": 9021.87166791058,
+                "nQunsat": 81.777861,
+                "nQsat": 0.0,
+                "dS": 34.04114450537509,
+                "nQ": 19.185155584044452
+            }
+        },
+        "watershed-scale-serial": {
+            "description": "Watershed-scale simulation for Big Spring basin in serial mode.",
+            "values": {
+                "dSat": -1039.6757638573154,
+                "dUnsat": 604.3714037410678,
+                "dCanopySWE": 1.7944399999999998,
+                "dSWE": 76.29523,
+                "dCanopy": 0.0,
+                "nP": 2685.388814,
+                "nET": 3054.8408849999996,
+                "nQsurf": 24.933493622716362,
+                "nQunsat": 0.0,
+                "nQsat": 0.0,
+                "dS": -357.2146901162476,
+                "nQ": -37.17087450646847
+            }
+        },
+        "watershed-scale-parallel": {
+            "description": "Watershed-scale simulation for Big Spring basin in parallel mode.",
+            "values": {
+                "dSat": -1039.6757638573154,
+                "dUnsat": 604.3714037410678,
+                "dCanopySWE": 1.7944399999999998,
+                "dSWE": 76.29523,
+                "dCanopy": 0.0,
+                "nP": 2685.388814,
+                "nET": 3054.8408849999996,
+                "nQsurf": 24.933493622716362,
+                "nQunsat": 0.0,
+                "nQsat": 0.0,
+                "dS": -357.2146901162476,
+                "nQ": -37.17087450646847
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+geopandas
+pandas
+matplotlib
+numpy
+shapely
+matplotlib_scalebar
