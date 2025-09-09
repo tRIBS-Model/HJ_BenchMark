@@ -48,11 +48,11 @@ Example Usage:
 
 To verify your results for the **serial watershed** run:
 ```bash
-python verification/verify.py watershed-scale-serial
+python doc/verification/verify.py watershed-scale-serial
 ```
 To verify your results for the **point scale** run:
 ```bash
-python verification/verify.py watershed-scale-serial
+python doc/verification/verify.py watershed-scale-serial
 ```
 **Expected Output**
 
