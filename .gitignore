@@ -1,5 +1,5 @@
 data/.DS_Store
 .DS_Store
-watershed-scale-big-spring/results/test/parallel
-watershed-scale-big-spring/results/test/serial
-point-scale-happy-jack/results/test
+watershed-scale-big-spring/results/test/parallel/*
+watershed-scale-big-spring/results/test/serial/*
+point-scale-happy-jack/results/test/*
