@@ -29,3 +29,57 @@ Before you begin, ensure you have the following:
 ### Step 2: Run a Benchmark Simulation
 
 Navigate into one of the benchmark directories. Each directory contains a specific `README.md` with detailed instructions on how to execute the tRIBS simulation for that case.
+
+For example:
+```bash
+cd watershed-scale-big-spring
+# Follow the instructions in watershed-scale-big-spring/README.md to run the model
+```
+The model will generate output files in the results/ subdirectory within the benchmark folder.
+
+### Step 3: Verify Your Results
+
+After the simulation is complete, return to the root directory of this repository. We provide an automated Python script to compare your model's output against the official reference values.
+
+Run the verify.py script, specifying which benchmark you ran.
+Example Usage:
+
+To verify your results for the **serial watershed** run:
+```bash
+python verification/verify.py watershed-scale-serial
+```
+To verify your results for the **point scale** run:
+```bash
+python verification/verify.py watershed-scale-serial
+```
+**Expected Output**
+
+The script will analyze your results and provide a clear, color-coded summary.
+
+**On success, you will see a message like this:**
+```bash
+Verifying benchmark 'watershed-scale-serial' against references for tRIBS v5.3.0...
+
+-> Analyzing your model output in 'watershed-scale-big-spring'...
+
+--- Comparison Results ---
+Total Change in Storage (mm)        | Ref: 9.3000        | Yours: 9.3000        | [PASS]
+Total Evapotranspiration (mm)       | Ref: 650.8000      | Yours: 650.8000      | [PASS]
+Total Precipitation (mm)            | Ref: 1250.2000     | Yours: 1250.2000     | [PASS]
+Total Runoff (mm)                   | Ref: 590.1000      | Yours: 590.1000      | [PASS]
+--------------------------
+
+Success! All checks passed.
+Your tRIBS installation appears to be working correctly for this benchmark.
+```
+
+
+---
+
+## Advanced Analysis and Visualization
+
+The `doc/` directory contains additional Jupyter Notebooks that were used in previous versions for plotting and analysis. These can be used for a more in-depth visual comparison of your results.
+
+## For Maintainers
+
+The official `reference_values.json` file can be updated by running the `doc/verification/generate_references.py` script. This should only be done after a new set of results has been generated following an official tRIBS model update.
