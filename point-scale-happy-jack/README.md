@@ -28,7 +28,7 @@ After the simulation has successfully completed, you must return to the **root d
 
 2.  Run the verification script, specifying the `point-scale-happy-jack` benchmark:
     ```bash
-    python verification/verify.py point-scale-happy-jack
+    python doc/verification/verify.py point-scale-happy-jack
     ```
 
 If your installation is correct, you will see a `[PASS]` message for all checks, confirming that your results match the official reference values.
