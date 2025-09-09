@@ -48,12 +48,12 @@ After a simulation has successfully completed, you must return to the **root dir
 
     *   To verify the **serial** run:
         ```bash
-        python verification/verify.py watershed-scale-serial
+        python doc/verification/verify.py watershed-scale-serial
         ```
 
     *   To verify the **parallel** run:
         ```bash
-        python verification/verify.py watershed-scale-parallel
+        python doc/verification/verify.py watershed-scale-parallel
         ```
 
 If your installation is correct, you will see a `[PASS]` message for all checks, confirming that your results match the official reference values.
