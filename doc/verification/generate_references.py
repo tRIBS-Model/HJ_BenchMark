@@ -11,7 +11,7 @@ from pytRIBS.classes import Results
 # SCRIPT CONFIGURATION
 # =============================================================================
 TRIBS_VERSION = "5.3.0"
-REFERENCE_FILE_OUTPUT = Path("doc/verification/generate/reference_values.json")
+REFERENCE_FILE_OUTPUT = Path("doc/verification/reference_values.json")
 
 # Define the root directories for each benchmark case
 POINT_SCALE_ROOT = Path("point-scale-happy-jack")

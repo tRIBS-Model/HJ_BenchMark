@@ -17,7 +17,7 @@ except ImportError:
 # SCRIPT CONFIGURATION
 # =============================================================================
 # Define the relative path to the official reference values file
-REFERENCE_FILE = Path("doc/verification/generate/reference_values.json")
+REFERENCE_FILE = Path("doc/verification/reference_values.json")
 # Define the relative tolerance for floating-point comparisons
 RELATIVE_TOLERANCE = 1e-3
 
